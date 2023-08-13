@@ -53,7 +53,7 @@ public record RubikCube
         _yo,
         _og);
 
-    private readonly CenterPiece _yellow = new(
+    private CenterPiece _yellow = new(
         FaceColor.Yellow,
         _yb,
         _yr,
@@ -63,32 +63,38 @@ public record RubikCube
     public Face Top => new(
         _white.North.Top,
         _white.West.Top,
-        _white.Color);
+        _white.Color,
+        _white.East.Top);
 
     public Face Bottom => new(
         _yellow.North.Top,
         _yellow.West.Top,
-        _yellow.Color);
+        _yellow.Color,
+        _yellow.East.Top);
 
     public Face Right => new(
        _orange.North.Front,
        _orange.West.Front,
-       _orange.Color);
+       _orange.Color,
+       _orange.East.Top);
 
     public Face Back => new(
         _green.North.Front,
         _green.West.Front,
-        _green.Color);
+        _green.Color,
+        _green.East.Top);
 
     public Face Front => new(
        _blue.North.Front,
        _blue.West.Top,
-       _blue.Color);
+       _blue.Color,
+       _blue.East.Top);
 
     public Face Left => new(
         _red.North.Front,
         _red.West.Front,
-        _red.Color);
+        _red.Color,
+        _red.East.Front);
 
     public void TurnLeft()
     {
@@ -102,6 +108,16 @@ public record RubikCube
         _blue = _blue with
         {
             West = _red.East
+        };
+
+        _green = _green with
+        {
+            East = _red.West
+        };
+
+        _yellow = _yellow with
+        {
+            West = _red.South
         };
     }
 

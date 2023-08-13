@@ -10,8 +10,8 @@ public record CenterPiece(
     public CenterPiece ClockWise() => this with
     {
         North = West,
-        West = South,
+        East = North,
         South = East,
-        East = North
+        West = South
     };
 }
