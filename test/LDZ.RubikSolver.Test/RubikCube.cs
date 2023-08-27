@@ -1,158 +1,227 @@
 ﻿namespace LDZ.RubikSolver.Test;
 
-public record RubikCube
+
+public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green, Face Yellow)
 {
-    private static readonly EdgePiece _wr = new EdgePiece(FaceColor.White, FaceColor.Red);
-    private static readonly EdgePiece _wb = new EdgePiece(FaceColor.White, FaceColor.Blue);
-    private static readonly EdgePiece _wo = new EdgePiece(FaceColor.White, FaceColor.Orange);
-    private static readonly EdgePiece _wg = new EdgePiece(FaceColor.White, FaceColor.Green);
+    public static RubikCube Solved() => new(
+        Face.SingleColor(FaceColor.White),
+        Face.SingleColor(FaceColor.Blue),
+        Face.SingleColor(FaceColor.Orange),
+        Face.SingleColor(FaceColor.Red),
+        Face.SingleColor(FaceColor.Green),
+        Face.SingleColor(FaceColor.Yellow));
 
-    private static readonly EdgePiece _yr = new EdgePiece(FaceColor.Yellow, FaceColor.Red);
-    private static readonly EdgePiece _yb = new EdgePiece(FaceColor.Yellow, FaceColor.Blue);
-    private static readonly EdgePiece _yo = new EdgePiece(FaceColor.Yellow, FaceColor.Orange);
-    private static readonly EdgePiece _yg = new EdgePiece(FaceColor.Yellow, FaceColor.Green);
-
-    private static readonly EdgePiece _ob = new (FaceColor.Blue, FaceColor.Orange);
-    private static readonly EdgePiece _br = new (FaceColor.Blue, FaceColor.Red);
-
-    private static readonly EdgePiece _og = new(FaceColor.Orange, FaceColor.Green);
-    private static readonly EdgePiece _gr = new(FaceColor.Green, FaceColor.Red);
-
-    private CenterPiece _white = new(
-        FaceColor.White,
-        _wg,
-        _wr,
-        _wb,
-        _wo);
-
-    private CenterPiece _blue = new(
-        FaceColor.Blue,
-        _wb,
-        _br,
-        _yb,
-        _ob);
-
-    private CenterPiece _red = new(
-        FaceColor.Red,
-        _wr,
-        _gr,
-        _yr,
-        _br);
-
-    private CenterPiece _green = new(
-        FaceColor.Green,
-        _wg,
-        _og,
-        _yg,
-        _gr);
-
-    private CenterPiece _orange = new(
-        FaceColor.Orange,
-        _wo,
-        _ob,
-        _yo,
-        _og);
-
-    private CenterPiece _yellow = new(
-        FaceColor.Yellow,
-        _yb,
-        _yr,
-        _yg,
-        _yo);
-
-    public Face Top => new(
-        _white.North.Top,
-        _white.West.Top,
-        _white.Color,
-        _white.East.Top);
-
-    public Face Bottom => new(
-        _yellow.North.Top,
-        _yellow.West.Top,
-        _yellow.Color,
-        _yellow.East.Top);
-
-    public Face Right => new(
-       _orange.North.Front,
-       _orange.West.Front,
-       _orange.Color,
-       _orange.East.Top);
-
-    public Face Back => new(
-        _green.North.Front,
-        _green.West.Front,
-        _green.Color,
-        _green.East.Top);
-
-    public Face Front => new(
-       _blue.North.Front,
-       _blue.West.Top,
-       _blue.Color,
-       _blue.East.Top);
-
-    public Face Left => new(
-        _red.North.Front,
-        _red.West.Front,
-        _red.Color,
-        _red.East.Front);
-
-    public void TurnLeft()
+    public RubikCube WhiteClockwise() => this with
     {
-        _red = _red.ClockWise();
+        White = White.WithClockWiseRotation(),
+        Blue = Blue.WithTopRowFrom(Orange),
+        Red = Red.WithTopRowFrom(Blue),
+        Green = Green.WithTopRowFrom(Red),
+        Orange = Orange.WithTopRowFrom(Green)
+    };
 
-        _white = _white with
-        {
-            West = _red.North
-        };
-
-        _blue = _blue with
-        {
-            West = _red.East
-        };
-
-        _green = _green with
-        {
-            East = _red.West
-        };
-
-        _yellow = _yellow with
-        {
-            West = _red.South
-        };
-    }
-
-    public void TurnRight()
+    public RubikCube WhiteCounterClockwise() => this with
     {
+        White = White.WithCounterClockWiseRotation(),
+        Blue = Blue.WithTopRowFrom(Red),
+        Red = Red.WithTopRowFrom(Green),
+        Green = Green.WithTopRowFrom(Orange),
+        Orange = Orange.WithTopRowFrom(Blue)
+    };
 
-    }
-
-    public void TurnTop()
+    public RubikCube BlueClockwise() => this with
     {
-        _white = _white.ClockWise();
-
-        _red = _red with
+        Blue = Blue.WithClockWiseRotation(),
+        Orange = Orange.WithLeftColumnFrom(White),
+        Yellow = Yellow.WithLeftColumnFrom(Orange),
+        White = White with
         {
-            North = _white.West
-        };
+            C11 = Red.C33,
+            C21 = Red.C23,
+            C31 = Red.C13
+        },
+        Red = Red.WithRightColumnFromLeftColumnInverted(Yellow)
+    };
 
-        _blue = _blue with
-        {
-            North = _white.South
-        };
-
-        _orange = _orange with
-        {
-            North = _white.East
-        };
-
-        _green = _green with
-        {
-            North = _white.North
-        };
-    }
-
-    public void TurnFront()
+    public RubikCube BlueCounterClockwise() => this with
     {
+        Blue = Blue.WithCounterClockWiseRotation(),
+        Orange = Orange.WithLeftColumnFrom(Yellow),
+        Yellow = Yellow with
+        {
+            C11 = Red.C33,
+            C21 = Red.C23,
+            C31 = Red.C13
+        },
+        White = White with
+        {
+            C11 = Orange.C11,
+            C21 = Orange.C21,
+            C31 = Orange.C31
+        },
+        Red = Red.WithRightColumnFromLeftColumnInverted(White)
+    };
 
-    }
+    public RubikCube OrangeClockwise() => this with
+    {
+        Orange = Orange.WithClockWiseRotation(),
+        White = White with
+        {
+            C31 = Blue.C33,
+            C32 = Blue.C23,
+            C33 = Blue.C13
+        },
+        Green = Green with
+        {
+            C11 = White.C31,
+            C21 = White.C32,
+            C31 = White.C33
+        },
+        Blue = Blue.WithRightColumnFromLeftColumn(Yellow),
+        Yellow = Yellow with
+        {
+            C11 = Green.C31,
+            C12 = Green.C21,
+            C13 = Green.C11
+        }
+    };
+
+    public RubikCube OrangeCounterClockwise() => this with
+    {
+        Orange = Orange.WithCounterClockWiseRotation(),
+        White = White with
+        {
+            C31 = Green.C11,
+            C32 = Green.C21,
+            C33 = Green.C31
+        },
+        Green = Green with
+        {
+            C11 = Yellow.C13,
+            C21 = Yellow.C12,
+            C31 = Yellow.C11
+        },
+        Blue = Blue with
+        {
+            C13 = White.C33,
+            C23 = White.C32,
+            C33 = White.C31
+        },
+        Yellow = Yellow with
+        {
+            C11 = Blue.C13,
+            C12 = Blue.C23,
+            C13 = Blue.C33
+        }
+    };
+
+    public RubikCube GreenClockwise() => this with
+    {
+        Green = Green.WithClockWiseRotation(),
+        White = White.WithRightColumnFrom(Orange),
+        Orange = Orange.WithRightColumnFrom(Yellow),
+        Yellow = Yellow with
+        {
+            C13 = Red.C31,
+            C23 = Red.C21,
+            C33 = Red.C11
+        },
+        Red = Red with
+        {
+            C11 = White.C33,
+            C21 = White.C23,
+            C31 = White.C13
+        }
+    };
+
+    public RubikCube GreenCounterClockwise() => this with
+    {
+        Green = Green.WithCounterClockWiseRotation(),
+        White = White with
+        {
+            C13 = Red.C31,
+            C23 = Red.C21,
+            C33 = Red.C11
+        },
+        Orange = Orange.WithRightColumnFrom(White),
+        Yellow = Yellow.WithRightColumnFrom(Orange),
+        Red = Red with
+        {
+            C11 = Yellow.C33,
+            C21 = Yellow.C23,
+            C31 = Yellow.C13
+        }
+    };
+
+    public RubikCube RedClockwise() => this with
+    {
+        Red = Red.WithClockWiseRotation(),
+        White = White with
+        {
+            C11 = Green.C13,
+            C12 = Green.C23,
+            C13 = Green.C33
+        },
+        Blue = Blue.WithLeftColumnFrom(White),
+        Green = Green with
+        {
+            C13 = Yellow.C33,
+            C23 = Yellow.C32,
+            C33 = Yellow.C31
+        },
+        Yellow = Yellow with
+        {
+            C31 = Blue.C11,
+            C32 = Blue.C21,
+            C33 = Blue.C31
+        }
+    };
+
+    public RubikCube RedCounterClockwise() => this with
+    {
+        Red = Red.WithCounterClockWiseRotation(),
+        White = White with
+        {
+            C11 = Blue.C31,
+            C12 = Blue.C21,
+            C13 = Blue.C11
+        },
+        Blue = Blue with
+        {
+            C11 = Yellow.C31,
+            C21 = Yellow.C32,
+            C31 = Yellow.C33
+        },
+        Green = Green.WithRightColumnFromLeftColumn(White),
+        Yellow = Yellow with
+        {
+            C31 = Green.C33,
+            C32 = Green.C23,
+            C33 = Green.C13
+        }
+    };
+
+    public RubikCube YellowClockwise() => this with
+    {
+        Yellow = Yellow.WithClockWiseRotation(),
+        Blue = Blue.WithBottomRowFrom(Red),
+        Red = Red.WithBottomRowFrom(Green),
+        Green = Green.WithBottomRowFrom(Orange),
+        Orange = Orange.WithBottomRowFrom(Blue)
+    };
+
+    public RubikCube YellowCounterClockwise() => this with
+    {
+        Yellow = Yellow.WithCounterClockWiseRotation(),
+        Blue = Blue with
+        {
+            C31 = Orange.C31,
+            C32 = Orange.C32,
+            C33 = Orange.C33
+        },
+        Red = Red.WithBottomRowFrom(Blue),
+        Green = Green.WithBottomRowFrom(Red),
+        Orange = Orange.WithBottomRowFrom(Green)
+    };
 }
+
