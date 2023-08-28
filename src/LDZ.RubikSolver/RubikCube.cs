@@ -1,7 +1,8 @@
-﻿namespace LDZ.RubikSolver.Test;
+﻿using System.Collections;
 
+namespace LDZ.RubikSolver;
 
-public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green, Face Yellow)
+public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green, Face Yellow) : IEnumerable<Face>
 {
     public static RubikCube Solved() => new(
         Face.SingleColor(FaceColor.White),
@@ -11,7 +12,24 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Face.SingleColor(FaceColor.Green),
         Face.SingleColor(FaceColor.Yellow));
 
-    public RubikCube WhiteClockwise() => this with
+    public RubikCube Turn(MoveKind kind) => kind switch
+    {
+        MoveKind.WhiteClockwise => WhiteClockwise(),
+        MoveKind.WhiteCounterClockwise => WhiteCounterClockwise(),
+        MoveKind.BlueClockwise => BlueClockwise(),
+        MoveKind.BlueCounterClockwise => BlueCounterClockwise(),
+        MoveKind.OrangeClockwise => OrangeClockwise(),
+        MoveKind.OrangeCounterClockwise => OrangeCounterClockwise(),
+        MoveKind.GreenClockwise => GreenClockwise(),
+        MoveKind.GreenCounterClockwise => GreenCounterClockwise(),
+        MoveKind.RedClockwise => RedClockwise(),
+        MoveKind.RedCounterClockwise => RedCounterClockwise(),
+        MoveKind.YellowClockwise => YellowClockwise(),
+        MoveKind.YellowCounterClockwise => YellowCounterClockwise(),
+        _ => throw new ArgumentException(nameof(kind)),
+    };
+
+    private RubikCube WhiteClockwise() => this with
     {
         White = White.WithClockWiseRotation(),
         Blue = Blue.WithTopRowFrom(Orange),
@@ -20,7 +38,7 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Orange = Orange.WithTopRowFrom(Green)
     };
 
-    public RubikCube WhiteCounterClockwise() => this with
+    private RubikCube WhiteCounterClockwise() => this with
     {
         White = White.WithCounterClockWiseRotation(),
         Blue = Blue.WithTopRowFrom(Red),
@@ -29,7 +47,7 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Orange = Orange.WithTopRowFrom(Blue)
     };
 
-    public RubikCube BlueClockwise() => this with
+    private RubikCube BlueClockwise() => this with
     {
         Blue = Blue.WithClockWiseRotation(),
         Orange = Orange.WithLeftColumnFrom(White),
@@ -43,7 +61,7 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Red = Red.WithRightColumnFromLeftColumnInverted(Yellow)
     };
 
-    public RubikCube BlueCounterClockwise() => this with
+    private RubikCube BlueCounterClockwise() => this with
     {
         Blue = Blue.WithCounterClockWiseRotation(),
         Orange = Orange.WithLeftColumnFrom(Yellow),
@@ -62,7 +80,7 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Red = Red.WithRightColumnFromLeftColumnInverted(White)
     };
 
-    public RubikCube OrangeClockwise() => this with
+    private RubikCube OrangeClockwise() => this with
     {
         Orange = Orange.WithClockWiseRotation(),
         White = White with
@@ -86,7 +104,7 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         }
     };
 
-    public RubikCube OrangeCounterClockwise() => this with
+    private RubikCube OrangeCounterClockwise() => this with
     {
         Orange = Orange.WithCounterClockWiseRotation(),
         White = White with
@@ -115,7 +133,7 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         }
     };
 
-    public RubikCube GreenClockwise() => this with
+    private RubikCube GreenClockwise() => this with
     {
         Green = Green.WithClockWiseRotation(),
         White = White.WithRightColumnFrom(Orange),
@@ -134,7 +152,7 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         }
     };
 
-    public RubikCube GreenCounterClockwise() => this with
+    private RubikCube GreenCounterClockwise() => this with
     {
         Green = Green.WithCounterClockWiseRotation(),
         White = White with
@@ -153,7 +171,7 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         }
     };
 
-    public RubikCube RedClockwise() => this with
+    private RubikCube RedClockwise() => this with
     {
         Red = Red.WithClockWiseRotation(),
         White = White with
@@ -177,7 +195,7 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         }
     };
 
-    public RubikCube RedCounterClockwise() => this with
+    private RubikCube RedCounterClockwise() => this with
     {
         Red = Red.WithCounterClockWiseRotation(),
         White = White with
@@ -192,7 +210,12 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
             C21 = Yellow.C32,
             C31 = Yellow.C33
         },
-        Green = Green.WithRightColumnFromLeftColumn(White),
+        Green = Green with
+        {
+            C13 = White.C11,
+            C23 = White.C12,
+            C33 = White.C13
+        },
         Yellow = Yellow with
         {
             C31 = Green.C33,
@@ -201,7 +224,7 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         }
     };
 
-    public RubikCube YellowClockwise() => this with
+    private RubikCube YellowClockwise() => this with
     {
         Yellow = Yellow.WithClockWiseRotation(),
         Blue = Blue.WithBottomRowFrom(Red),
@@ -210,7 +233,7 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Orange = Orange.WithBottomRowFrom(Blue)
     };
 
-    public RubikCube YellowCounterClockwise() => this with
+    private RubikCube YellowCounterClockwise() => this with
     {
         Yellow = Yellow.WithCounterClockWiseRotation(),
         Blue = Blue with
@@ -223,5 +246,19 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Green = Green.WithBottomRowFrom(Red),
         Orange = Orange.WithBottomRowFrom(Green)
     };
-}
 
+    public bool IsSolved => this.All(f => f.IsSolved);
+
+    public IEnumerator<Face> GetEnumerator()
+    {
+        yield return White;
+        yield return Green;
+        yield return Yellow;
+        yield return Blue;
+        yield return Red;
+        yield return Orange;
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+        => GetEnumerator();
+}

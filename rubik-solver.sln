@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LDZ.RubikSolver.Test", "test\LDZ.RubikSolver.Test\LDZ.RubikSolver.Test.csproj", "{4DD96567-A6A1-4FF7-9F52-4341C7C96413}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LDZ.RubikSolver", "src\LDZ.RubikSolver\LDZ.RubikSolver.csproj", "{46E6F6F3-0C99-4CC6-A003-DFDE9A3221A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4DD96567-A6A1-4FF7-9F52-4341C7C96413}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DD96567-A6A1-4FF7-9F52-4341C7C96413}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DD96567-A6A1-4FF7-9F52-4341C7C96413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46E6F6F3-0C99-4CC6-A003-DFDE9A3221A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E6F6F3-0C99-4CC6-A003-DFDE9A3221A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E6F6F3-0C99-4CC6-A003-DFDE9A3221A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E6F6F3-0C99-4CC6-A003-DFDE9A3221A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

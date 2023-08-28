@@ -1,4 +1,4 @@
-﻿namespace LDZ.RubikSolver.Test;
+﻿namespace LDZ.RubikSolver;
 
 public enum FaceColor
 {

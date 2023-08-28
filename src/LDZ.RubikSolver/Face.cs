@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.ComponentModel;
+﻿using System.Collections;
 
-namespace LDZ.RubikSolver.Test;
+namespace LDZ.RubikSolver;
+
 public record Face(
     FaceColor C11,
     FaceColor C12,
@@ -91,6 +90,8 @@ public record Face(
         C33 = from.C33
     };
 
+    public bool IsSolved => this.Distinct().Count() == 1;
+
     public IEnumerator<FaceColor> GetEnumerator()
     {
         yield return C11;
@@ -106,4 +107,3 @@ public record Face(
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }
-
