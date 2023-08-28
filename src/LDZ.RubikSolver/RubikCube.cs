@@ -12,22 +12,18 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Face.SingleColor(FaceColor.Green),
         Face.SingleColor(FaceColor.Yellow));
 
-    public RubikCube Turn(MoveKind kind) => kind switch
+    public RubikCube Turn(MoveKind kind, bool clockwise) => kind switch
     {
-        MoveKind.WhiteClockwise => WhiteClockwise(),
-        MoveKind.WhiteCounterClockwise => WhiteCounterClockwise(),
-        MoveKind.BlueClockwise => BlueClockwise(),
-        MoveKind.BlueCounterClockwise => BlueCounterClockwise(),
-        MoveKind.OrangeClockwise => OrangeClockwise(),
-        MoveKind.OrangeCounterClockwise => OrangeCounterClockwise(),
-        MoveKind.GreenClockwise => GreenClockwise(),
-        MoveKind.GreenCounterClockwise => GreenCounterClockwise(),
-        MoveKind.RedClockwise => RedClockwise(),
-        MoveKind.RedCounterClockwise => RedCounterClockwise(),
-        MoveKind.YellowClockwise => YellowClockwise(),
-        MoveKind.YellowCounterClockwise => YellowCounterClockwise(),
+        MoveKind.White => TurnWhite(clockwise),
+        MoveKind.Blue => TurnBlue(clockwise),
+        MoveKind.Orange => TurnOrange(clockwise),
+        MoveKind.Green => TurnGreen(clockwise),
+        MoveKind.Red => TurnRed(clockwise),
+        MoveKind.Yellow => TurnYellow(clockwise),
         _ => throw new ArgumentException(nameof(kind)),
     };
+
+    private RubikCube TurnWhite(bool clockwise) => clockwise ? WhiteClockwise() : WhiteCounterClockwise();
 
     private RubikCube WhiteClockwise() => this with
     {
@@ -46,6 +42,8 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Green = Green.WithTopRowFrom(Orange),
         Orange = Orange.WithTopRowFrom(Blue)
     };
+
+    private RubikCube TurnBlue(bool clockwise) => clockwise ? BlueClockwise() : BlueCounterClockwise();
 
     private RubikCube BlueClockwise() => this with
     {
@@ -80,6 +78,8 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Red = Red.WithRightColumnFromLeftColumnInverted(White)
     };
 
+    private RubikCube TurnOrange(bool clockwise) => clockwise ? OrangeClockwise() : OrangeCounterClockwise();
+
     private RubikCube OrangeClockwise() => this with
     {
         Orange = Orange.WithClockWiseRotation(),
@@ -95,7 +95,12 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
             C21 = White.C32,
             C31 = White.C33
         },
-        Blue = Blue.WithRightColumnFromLeftColumn(Yellow),
+        Blue = Blue with
+        {
+            C13 = Yellow.C11,
+            C23 = Yellow.C12,
+            C33 = Yellow.C13
+        },
         Yellow = Yellow with
         {
             C11 = Green.C31,
@@ -132,6 +137,8 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
             C13 = Blue.C33
         }
     };
+
+    private RubikCube TurnGreen(bool clockwise) => clockwise ? GreenClockwise() : GreenCounterClockwise();
 
     private RubikCube GreenClockwise() => this with
     {
@@ -171,6 +178,8 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         }
     };
 
+    private RubikCube TurnRed(bool clockwise) => clockwise ? RedClockwise() : RedCounterClockwise();
+
     private RubikCube RedClockwise() => this with
     {
         Red = Red.WithClockWiseRotation(),
@@ -180,7 +189,12 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
             C12 = Green.C23,
             C13 = Green.C33
         },
-        Blue = Blue.WithLeftColumnFrom(White),
+        Blue = Blue with
+        {
+            C11 = White.C13,
+            C21 = White.C12,
+            C31 = White.C11
+        },
         Green = Green with
         {
             C13 = Yellow.C33,
@@ -223,6 +237,8 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
             C33 = Green.C13
         }
     };
+
+    private RubikCube TurnYellow(bool clockwise) => clockwise ? YellowClockwise() : YellowCounterClockwise();
 
     private RubikCube YellowClockwise() => this with
     {

@@ -1,19 +1,13 @@
-﻿using System.Collections.Immutable;
-
-namespace LDZ.RubikSolver;
+﻿namespace LDZ.RubikSolver;
 
 public enum MoveKind
 {
-    WhiteClockwise,
-    WhiteCounterClockwise,
-    BlueClockwise,
-    BlueCounterClockwise,
-    GreenClockwise,
-    GreenCounterClockwise,
-    OrangeClockwise,
-    OrangeCounterClockwise,
-    RedClockwise,
-    RedCounterClockwise,
-    YellowClockwise,
-    YellowCounterClockwise
+    White,
+    Blue,
+    Green,
+    Orange,
+    Red,
+    Yellow
 }
+
+public record Move(MoveKind Kind, bool Clockwise);

@@ -1,6 +1,6 @@
 ﻿namespace LDZ.RubikSolver.Test;
 
-public class TurnCounterClockwiseOrtoUnitTest
+public class TurnCounterClockwiseOrthoUnitTest
 {
     private RubikCube Cube { get; } = RubikCube.Solved();
 
@@ -8,8 +8,8 @@ public class TurnCounterClockwiseOrtoUnitTest
     public void WhiteGreen()
     {
         var actual = Cube
-            .Turn(MoveKind.WhiteCounterClockwise)
-            .Turn(MoveKind.GreenCounterClockwise);
+            .Turn(MoveKind.White, false)
+            .Turn(MoveKind.Green, false);
         actual.Should().NotBeSameAs(Cube);
 
         actual.White.C11.Should().Be(FaceColor.White);
@@ -47,8 +47,8 @@ public class TurnCounterClockwiseOrtoUnitTest
     public void WhiteOrange()
     {
         var actual = Cube
-            .Turn(MoveKind.WhiteCounterClockwise)
-            .Turn(MoveKind.OrangeCounterClockwise);
+            .Turn(MoveKind.White, false)
+            .Turn(MoveKind.Orange, false);
         actual.Should().NotBeSameAs(Cube);
 
         actual.White.C11.Should().Be(FaceColor.White);
@@ -86,8 +86,8 @@ public class TurnCounterClockwiseOrtoUnitTest
     public void WhiteBlue()
     {
         var actual = Cube
-            .Turn(MoveKind.WhiteCounterClockwise)
-            .Turn(MoveKind.BlueCounterClockwise);
+            .Turn(MoveKind.White, false)
+            .Turn(MoveKind.Blue, false);
         actual.Should().NotBeSameAs(Cube);
 
         actual.White.C11.Should().Be(FaceColor.Blue);
@@ -125,8 +125,8 @@ public class TurnCounterClockwiseOrtoUnitTest
     public void WhiteRed()
     {
         var actual = Cube
-            .Turn(MoveKind.WhiteCounterClockwise)
-            .Turn(MoveKind.RedCounterClockwise);
+            .Turn(MoveKind.White, false)
+            .Turn(MoveKind.Red, false);
         actual.Should().NotBeSameAs(Cube);
 
         actual.White.C11.Should().Be(FaceColor.Blue);
@@ -164,8 +164,8 @@ public class TurnCounterClockwiseOrtoUnitTest
     public void YellowRed()
     {
         var actual = Cube
-            .Turn(MoveKind.YellowCounterClockwise)
-            .Turn(MoveKind.RedCounterClockwise);
+            .Turn(MoveKind.Yellow, false)
+            .Turn(MoveKind.Red, false);
         actual.Should().NotBeSameAs(Cube);
 
         actual.Yellow.C11.Should().Be(FaceColor.Yellow);
@@ -203,8 +203,8 @@ public class TurnCounterClockwiseOrtoUnitTest
     public void YellowBlue()
     {
         var actual = Cube
-            .Turn(MoveKind.YellowCounterClockwise)
-            .Turn(MoveKind.BlueCounterClockwise);
+            .Turn(MoveKind.Yellow, false)
+            .Turn(MoveKind.Blue, false);
         actual.Should().NotBeSameAs(Cube);
 
         actual.Yellow.C11.Should().Be(FaceColor.Blue);
@@ -242,8 +242,8 @@ public class TurnCounterClockwiseOrtoUnitTest
     public void YellowOrange()
     {
         var actual = Cube
-            .Turn(MoveKind.YellowCounterClockwise)
-            .Turn(MoveKind.OrangeCounterClockwise);
+            .Turn(MoveKind.Yellow, false)
+            .Turn(MoveKind.Orange, false);
         actual.Should().NotBeSameAs(Cube);
 
         actual.Yellow.C11.Should().Be(FaceColor.Blue);
@@ -281,8 +281,8 @@ public class TurnCounterClockwiseOrtoUnitTest
     public void YellowGreen()
     {
         var actual = Cube
-            .Turn(MoveKind.YellowCounterClockwise)
-            .Turn(MoveKind.GreenCounterClockwise);
+            .Turn(MoveKind.Yellow, false)
+            .Turn(MoveKind.Green, false);
         actual.Should().NotBeSameAs(Cube);
 
         actual.Yellow.C11.Should().Be(FaceColor.Yellow);

@@ -62,13 +62,6 @@ public record Face(
         C33 = from.C11
     };
 
-    public Face WithRightColumnFromLeftColumn(Face from) => this with
-    {
-        C13 = from.C11,
-        C23 = from.C21,
-        C33 = from.C31
-    };
-
     public Face WithRightColumnFrom(Face from) => this with
     {
         C13 = from.C13,
