@@ -15,9 +15,9 @@ public class SolvedStateUnitTest
     [InlineData(MoveKind.Orange, false)]
     [InlineData(MoveKind.Red, true)]
     [InlineData(MoveKind.Red, false)]
-    public void Unsolved(MoveKind move, bool clockwise)
+    public void Unsolved(MoveKind faceColour, bool clockwise)
     {
-        var cube = RubikCube.Solved().Turn(move, clockwise);
+        var cube = RubikCube.Solved().Turn(new Move(faceColour, clockwise));
         cube.IsSolved.Should().BeFalse();
     }
 
@@ -35,11 +35,11 @@ public class SolvedStateUnitTest
     [InlineData(MoveKind.Blue)]
     [InlineData(MoveKind.Green)]
     [InlineData(MoveKind.Yellow)]
-    public void SolvedOneReciprocalMoves(MoveKind kind)
+    public void SolvedOneReciprocalMoves(MoveKind faceColour)
     {
         var cube = RubikCube.Solved()
-            .Turn(kind, true)
-            .Turn(kind, false);
+            .Turn(new Move(faceColour, true))
+            .Turn(new Move(faceColour, false));
 
         cube.IsSolved.Should().BeTrue();
     }
@@ -78,14 +78,14 @@ public class SolvedStateUnitTest
     public void SolvedThreeReciprocalMoves(MoveKind move1, MoveKind move2, MoveKind move3)
     {
         var scrambled = RubikCube.Solved()
-            .Turn(move1, true)
-            .Turn(move2, true)
-            .Turn(move3, true);
+            .Turn(new Move(move1, true))
+            .Turn(new Move(move2, true))
+            .Turn(new Move(move3, true));
 
         var actual = scrambled
-            .Turn(move3, false)
-            .Turn(move2, false)
-            .Turn(move1, false);
+            .Turn(new Move(move3, false))
+            .Turn(new Move(move2, false))
+            .Turn(new Move(move1, false));
 
         actual.IsSolved.Should().BeTrue();
     }

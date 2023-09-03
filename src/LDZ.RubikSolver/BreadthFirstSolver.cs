@@ -1,27 +1,32 @@
 ﻿namespace LDZ.RubikSolver;
 
-public class BreadthFirstSolver
+public class BreadthFirstSolver : IRubikCubeSolver
 {
-    private int MaxNodes { get; } = 12 * 12 * 12 * 12 * 12 * 12;
+    public BreadthFirstSolver(int maxNodes = int.MaxValue)
+    {
+        MaxNodes = maxNodes;
+    }
+
+    protected int MaxNodes { get; }
 
     public IEnumerable<Move> Solve(RubikCube cube)
     {
-        var searchQueue = new Queue<Node>();
-        searchQueue.Enqueue(new Node(cube));
+        var searchQueue = new Queue<SearchNode>();
+        searchQueue.Enqueue(new SearchNode(cube));
 
         while (searchQueue.Count > 0 && searchQueue.Count < MaxNodes)
         {
             var currentNode = searchQueue.Dequeue();
             if (currentNode.Cube.IsSolved)
             {
-                return currentNode.Moves;
+                return currentNode.Moves.Reverse();
             }
 
-            foreach (var move in GetMoves())
+            foreach (var move in Move.AllMoves)
             {
                 searchQueue.Enqueue(currentNode with
                 {
-                    Cube = currentNode.Cube.Turn(move.Kind, move.Clockwise),
+                    Cube = currentNode.Cube.Turn(move),
                     Move = move,
                     Parent = currentNode,
                 });
@@ -29,36 +34,5 @@ public class BreadthFirstSolver
         }
 
         throw new Exception();
-    }
-
-    private IEnumerable<Move> GetMoves()
-    {
-        foreach (var kind in Enum.GetValues<MoveKind>())
-        {
-            yield return new Move(kind, true);
-            yield return new Move(kind, false);
-        }
-    }
-
-    private record Node(RubikCube Cube, Node? Parent = null, Move? Move = null)
-    {
-        public IEnumerable<Move> Moves
-        {
-            get
-            {
-                if (Parent != null)
-                {
-                    foreach (var move in Parent.Moves)
-                    {
-                        yield return move;
-                    }
-                }
-
-                if (Move != null)
-                {
-                    yield return Move;
-                }
-            }
-        }
     }
 }

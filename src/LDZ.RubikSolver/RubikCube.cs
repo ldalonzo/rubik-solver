@@ -12,15 +12,15 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Face.SingleColor(FaceColor.Green),
         Face.SingleColor(FaceColor.Yellow));
 
-    public RubikCube Turn(MoveKind kind, bool clockwise) => kind switch
+    public RubikCube Turn(Move move) => move.Kind switch
     {
-        MoveKind.White => TurnWhite(clockwise),
-        MoveKind.Blue => TurnBlue(clockwise),
-        MoveKind.Orange => TurnOrange(clockwise),
-        MoveKind.Green => TurnGreen(clockwise),
-        MoveKind.Red => TurnRed(clockwise),
-        MoveKind.Yellow => TurnYellow(clockwise),
-        _ => throw new ArgumentException(nameof(kind)),
+        MoveKind.White => TurnWhite(move.Clockwise),
+        MoveKind.Blue => TurnBlue(move.Clockwise),
+        MoveKind.Orange => TurnOrange(move.Clockwise),
+        MoveKind.Green => TurnGreen(move.Clockwise),
+        MoveKind.Red => TurnRed(move.Clockwise),
+        MoveKind.Yellow => TurnYellow(move.Clockwise),
+        _ => throw new ArgumentException(nameof(move.Kind)),
     };
 
     private RubikCube TurnWhite(bool clockwise) => clockwise ? WhiteClockwise() : WhiteCounterClockwise();

@@ -9,5 +9,3 @@ public enum MoveKind
     Red,
     Yellow
 }
-
-public record Move(MoveKind Kind, bool Clockwise);

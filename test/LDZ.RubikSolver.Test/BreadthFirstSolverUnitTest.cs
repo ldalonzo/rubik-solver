@@ -2,7 +2,12 @@
 
 public class BreadthFirstSolverUnitTest
 {
-    public BreadthFirstSolver Solver { get; } = new BreadthFirstSolver();
+    public BreadthFirstSolverUnitTest()
+    {
+        Solver = new BreadthFirstSolver();
+    }
+
+    private IRubikCubeSolver Solver { get; }
 
     [Fact]
     public void Solved()
@@ -19,31 +24,17 @@ public class BreadthFirstSolverUnitTest
     [InlineData(MoveKind.Orange, true)]
     [InlineData(MoveKind.Yellow, true)]
     [InlineData(MoveKind.Red, true)]
-    public void ScrambledOne(MoveKind move, bool clockwise)
-    {
-        var cube = RubikCube.Solved().Turn(move, clockwise);
-        var solution = Solver.Solve(cube);
-        solution.Should().ContainSingle().Which.Should().Be(new Move(move, !clockwise));
-    }
+    public void ScrambledOne(MoveKind move, bool clockwise) => SolveWithKnownSolution(
+        new Move(move, clockwise));
 
     [Theory]
     [InlineData(MoveKind.White, MoveKind.Red)]
     [InlineData(MoveKind.White, MoveKind.Orange)]
     [InlineData(MoveKind.Orange, MoveKind.Yellow)]
     [InlineData(MoveKind.Orange, MoveKind.White)]
-    public void ScrambledTwo(MoveKind move1, MoveKind move2)
-    {
-        var cube = RubikCube.Solved()
-            .Turn(move1, true)
-            .Turn(move2, true);
-
-        var solution = Solver.Solve(cube).ToList();
-        solution.Should().ContainInConsecutiveOrder(new[]
-        {
-            new Move(move2, false),
-            new Move(move1, false)
-        });
-    }
+    public void ScrambledTwo(MoveKind move1, MoveKind move2) => SolveWithKnownSolution(
+        new Move(move1, true),
+        new Move(move2, true));
 
     [Theory]
     [InlineData(MoveKind.White, MoveKind.Red, MoveKind.Green)]
@@ -52,19 +43,37 @@ public class BreadthFirstSolverUnitTest
     [InlineData(MoveKind.Blue, MoveKind.Red, MoveKind.Blue)]
     [InlineData(MoveKind.Orange, MoveKind.Green, MoveKind.Orange)]
     [InlineData(MoveKind.Orange, MoveKind.White, MoveKind.Orange)]
-    public void ScrambledThree(MoveKind move1, MoveKind move2, MoveKind move3)
-    {
-        var cube = RubikCube.Solved()
-            .Turn(move1, true)
-            .Turn(move2, true)
-            .Turn(move3, true);
+    public void ScrambledThree(MoveKind move1, MoveKind move2, MoveKind move3) => SolveWithKnownSolution(
+        new Move(move1, true),
+        new Move(move2, true),
+        new Move(move3, true));
 
-        var solution = Solver.Solve(cube);
-        solution.Should().ContainInOrder(new[]
-        {
-            new Move(move3, false),
-            new Move(move2, false),
-            new Move(move1, false)
-        });
+    [Fact]
+    public void ScrambledFour() => SolveWithKnownSolution(
+        new Move(MoveKind.Yellow, true),
+        new Move(MoveKind.Red, true),
+        new Move(MoveKind.Yellow, false),
+        new Move(MoveKind.Red, false));
+
+    [Fact]
+    public void ScrambledFive() => SolveWithKnownSolution(
+        new Move(MoveKind.Yellow, true),
+        new Move(MoveKind.Red, true),
+        new Move(MoveKind.Yellow, false),
+        new Move(MoveKind.Red, false),
+        new Move(MoveKind.Blue, true));
+
+    private void SolveWithKnownSolution(params Move[] expectedSolution)
+    {
+        var scrambled = expectedSolution
+            .Reverse()
+            .Aggregate(RubikCube.Solved(), (c, move) => c.Turn(move.Reverse()));
+
+        var solution = Solver.Solve(scrambled);
+
+        var cube = solution.Aggregate(scrambled, (c, move) => c.Turn(move));
+        cube.IsSolved.Should().BeTrue();
+
+        solution.Should().ContainInConsecutiveOrder(expectedSolution);
     }
 }
