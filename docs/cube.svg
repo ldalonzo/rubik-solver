@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 482 362" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-57,-68)">
+        <g id="Cube">
+            <g id="W" transform="matrix(1,0,0,1,-114,40)">
+                <g>
+                    <g transform="matrix(1,0,0,1,-41,-44)">
+                        <g id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">11</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-44)">
+                        <g id="Square1" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text1" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">12</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-44)">
+                        <g id="Square2" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text2" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">13</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,-4)">
+                        <g id="Square3" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text3" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">21</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-4)">
+                        <g id="Square4" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:white;"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text4" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">22</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-4)">
+                        <g id="Square5" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text5" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">23</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,36)">
+                        <g id="Square6" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text6" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">31</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,36)">
+                        <g id="Square7" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text7" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">32</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,36)">
+                        <g id="Square8" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text8" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">33</text>
+                        </g>
+                    </g>
+                </g>
+                <rect x="292" y="149" width="120" height="120" style="fill:white;fill-opacity:0;stroke:black;stroke-width:2px;"/>
+            </g>
+            <g id="R" transform="matrix(1,0,0,1,-234,40)">
+                <g>
+                    <g transform="matrix(1,0,0,1,-41,-44)">
+                        <g id="Square9" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text9" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">31</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-44)">
+                        <g id="Square10" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text10" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">21</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-44)">
+                        <g id="Square11" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text11" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">11</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,-4)">
+                        <g id="Square12" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text12" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">32</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-4)">
+                        <g id="Square13" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(183,18,52);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text13" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">22</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-4)">
+                        <g id="Square14" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text14" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">12</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,36)">
+                        <g id="Square15" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text15" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">33</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,36)">
+                        <g id="Square16" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text16" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">23</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,36)">
+                        <g id="Square17" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text17" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">13</text>
+                        </g>
+                    </g>
+                </g>
+                <rect x="292" y="149" width="120" height="120" style="fill:white;fill-opacity:0;stroke:black;stroke-width:2px;"/>
+            </g>
+            <g id="O" transform="matrix(1,0,0,1,6,40)">
+                <g>
+                    <g transform="matrix(1,0,0,1,-41,-44)">
+                        <g id="Square18" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text18" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">13</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-44)">
+                        <g id="Square19" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text19" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">23</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-44)">
+                        <g id="Square20" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text20" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">33</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,-4)">
+                        <g id="Square21" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text21" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">12</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-4)">
+                        <g id="Square22" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(255,88,0);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text22" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">22</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-4)">
+                        <g id="Square23" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text23" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">32</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,36)">
+                        <g id="Square24" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text24" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">11</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,36)">
+                        <g id="Square25" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text25" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">21</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,36)">
+                        <g id="Square26" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text26" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">31</text>
+                        </g>
+                    </g>
+                </g>
+                <rect x="292" y="149" width="120" height="120" style="fill:white;fill-opacity:0;stroke:black;stroke-width:2px;"/>
+            </g>
+            <g id="B" transform="matrix(1,0,0,1,-114,160)">
+                <g>
+                    <g transform="matrix(1,0,0,1,-41,-44)">
+                        <g id="Square27" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text27" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">11</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-44)">
+                        <g id="Square28" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text28" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">12</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-44)">
+                        <g id="Square29" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text29" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">13</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,-4)">
+                        <g id="Square30" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text30" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">21</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-4)">
+                        <g id="Square31" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(0,70,173);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text31" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">22</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-4)">
+                        <g id="Square32" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text32" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">23</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,36)">
+                        <g id="Square33" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text33" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">31</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,36)">
+                        <g id="Square34" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text34" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">32</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,36)">
+                        <g id="Square35" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text35" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">33</text>
+                        </g>
+                    </g>
+                </g>
+                <rect x="292" y="149" width="120" height="120" style="fill:white;fill-opacity:0;stroke:black;stroke-width:2px;"/>
+            </g>
+            <g id="G" transform="matrix(1,0,0,1,-114,-80)">
+                <g>
+                    <g transform="matrix(1,0,0,1,-41,-44)">
+                        <g id="Square36" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text36" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">33</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-44)">
+                        <g id="Square37" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text37" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">32</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-44)">
+                        <g id="Square38" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text38" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">31</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,-4)">
+                        <g id="Square39" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text39" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">23</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-4)">
+                        <g id="Square40" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(0,155,72);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text40" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">22</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-4)">
+                        <g id="Square41" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text41" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">21</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,36)">
+                        <g id="Square42" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text42" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">13</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,36)">
+                        <g id="Square43" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text43" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">12</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,36)">
+                        <g id="Square44" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text44" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">11</text>
+                        </g>
+                    </g>
+                </g>
+                <rect x="292" y="149" width="120" height="120" style="fill:white;fill-opacity:0;stroke:black;stroke-width:2px;"/>
+            </g>
+            <g id="Y" transform="matrix(1,0,0,1,126,40)">
+                <g>
+                    <g transform="matrix(1,0,0,1,-41,-44)">
+                        <g id="Square45" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text45" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">13</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-44)">
+                        <g id="Square46" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text46" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">23</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-44)">
+                        <g id="Square47" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text47" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">33</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,-4)">
+                        <g id="Square48" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text48" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">12</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,-4)">
+                        <g id="Square49" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(255,213,0);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text49" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">22</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,-4)">
+                        <g id="Square50" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text50" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">32</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-41,36)">
+                        <g id="Square51" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text51" serif:id="Text" transform="matrix(1,0,0,1,9.68032,59.3925)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">11</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-1,36)">
+                        <g id="Square52" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text52" serif:id="Text" transform="matrix(1,0,0,1,9.64809,59.4276)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">21</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,39,36)">
+                        <g id="Square53" serif:id="Square" transform="matrix(1,0,0,1,73,36)">
+                            <rect x="260" y="157" width="40" height="40" style="fill:rgb(235,235,235);"/>
+                            <rect x="260" y="157" width="40" height="40" style="fill:none;stroke:black;stroke-width:1px;"/>
+                        </g>
+                        <g id="Text53" serif:id="Text" transform="matrix(1,0,0,1,9.72133,59.4628)">
+                            <text x="336.704px" y="157.454px" style="font-family:'Consolas', monospace;font-size:12px;">31</text>
+                        </g>
+                    </g>
+                </g>
+                <rect x="292" y="149" width="120" height="120" style="fill:white;fill-opacity:0;stroke:black;stroke-width:2px;"/>
+            </g>
+        </g>
+    </g>
+</svg>
