@@ -23,89 +23,160 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         _ => throw new ArgumentException(nameof(move.Kind)),
     };
 
-    private RubikCube TurnWhite(bool clockwise) => clockwise ? WhiteClockwise() : WhiteCounterClockwise();
+    private RubikCube TurnWhite(bool clockwise) => clockwise
+        ? WhiteClockwise()
+        : WhiteCounterClockwise();
 
     private RubikCube WhiteClockwise() => this with
     {
         White = White.WithClockWiseRotation(),
-        Blue = Blue.WithTopRowFrom(Orange),
-        Red = Red.WithTopRowFrom(Blue),
-        Green = Green.WithTopRowFrom(Red),
-        Orange = Orange.WithTopRowFrom(Green)
+        Blue = Blue with
+        {
+            C11 = Orange.C31,
+            C12 = Orange.C21,
+            C13 = Orange.C11
+        },
+        Red = Red with
+        {
+            C13 = Blue.C11,
+            C23 = Blue.C12,
+            C33 = Blue.C13
+        },
+        Green = Green with
+        {
+            C31 = Red.C33,
+            C32 = Red.C23,
+            C33 = Red.C13
+        },
+        Orange = Orange with
+        {
+            C11 = Green.C31,
+            C21 = Green.C32,
+            C31 = Green.C33
+        }
     };
 
     private RubikCube WhiteCounterClockwise() => this with
     {
         White = White.WithCounterClockWiseRotation(),
-        Blue = Blue.WithTopRowFrom(Red),
-        Red = Red.WithTopRowFrom(Green),
-        Green = Green.WithTopRowFrom(Orange),
-        Orange = Orange.WithTopRowFrom(Blue)
-    };
+        Blue = Blue with
+        {
+            C11 = Red.C13,
+            C12 = Red.C23,
+            C13 = Red.C33
+        },
+        Red = Red with
+        {
+            C13 = Green.C33,
+            C23 = Green.C32,
+            C33 = Green.C31
+        },
+        Green = Green with
+        {
+            C31 = Orange.C11,
+            C32 = Orange.C21,
+            C33 = Orange.C31
+        },
+        Orange = Orange with
+        {
+            C11 = Blue.C13,
+            C21 = Blue.C12,
+            C31 = Blue.C11
+        }
+     };
 
-    private RubikCube TurnBlue(bool clockwise) => clockwise ? BlueClockwise() : BlueCounterClockwise();
+    private RubikCube TurnBlue(bool clockwise) => clockwise
+        ? BlueClockwise()
+        : BlueCounterClockwise();
 
     private RubikCube BlueClockwise() => this with
     {
         Blue = Blue.WithClockWiseRotation(),
-        Orange = Orange.WithLeftColumnFrom(White),
-        Yellow = Yellow.WithLeftColumnFrom(Orange),
+        Orange = Orange with
+        {
+            C31 = White.C31,
+            C32 = White.C32,
+            C33 = White.C33
+        },
+        Yellow = Yellow with
+        {
+            C31 = Orange.C31,
+            C32 = Orange.C32,
+            C33 = Orange.C33
+        },
         White = White with
         {
-            C11 = Red.C33,
-            C21 = Red.C23,
-            C31 = Red.C13
+            C31 = Red.C31,
+            C32 = Red.C32,
+            C33 = Red.C33
         },
-        Red = Red.WithRightColumnFromLeftColumnInverted(Yellow)
+        Red = Red with
+        {
+            C31 = Yellow.C31,
+            C32 = Yellow.C32,
+            C33 = Yellow.C33
+        }
     };
 
     private RubikCube BlueCounterClockwise() => this with
     {
         Blue = Blue.WithCounterClockWiseRotation(),
-        Orange = Orange.WithLeftColumnFrom(Yellow),
+        Orange = Orange with
+        {
+            C31 = Yellow.C31,
+            C32 = Yellow.C32,
+            C33 = Yellow.C33
+        },
         Yellow = Yellow with
         {
-            C11 = Red.C33,
-            C21 = Red.C23,
-            C31 = Red.C13
+            C31 = Red.C31,
+            C32 = Red.C32,
+            C33 = Red.C33
         },
         White = White with
         {
-            C11 = Orange.C11,
-            C21 = Orange.C21,
-            C31 = Orange.C31
+            C31 = Orange.C31,
+            C32 = Orange.C32,
+            C33 = Orange.C33
         },
-        Red = Red.WithRightColumnFromLeftColumnInverted(White)
+        Red = Red with
+        {
+            C31 = White.C31,
+            C32 = White.C32,
+            C33 = White.C33
+        }
     };
 
-    private RubikCube TurnOrange(bool clockwise) => clockwise ? OrangeClockwise() : OrangeCounterClockwise();
+    private RubikCube TurnOrange(bool clockwise) => clockwise
+        ? OrangeClockwise()
+        : OrangeCounterClockwise();
 
     private RubikCube OrangeClockwise() => this with
     {
         Orange = Orange.WithClockWiseRotation(),
         White = White with
         {
-            C31 = Blue.C33,
-            C32 = Blue.C23,
-            C33 = Blue.C13
+            C13 = Blue.C13,
+            C23 = Blue.C23,
+            C33 = Blue.C33
         },
         Green = Green with
         {
-            C11 = White.C31,
-            C21 = White.C32,
-            C31 = White.C33
+            C13 = White.C13,
+            C23 = White.C23,
+            C33 = White.C33
         },
         Blue = Blue with
         {
-            C13 = Yellow.C11,
-            C23 = Yellow.C12,
-            C33 = Yellow.C13
+            C13 = Yellow.C31,
+            C23 = Yellow.C21,
+            C33 = Yellow.C11
         },
         Yellow = Yellow with
         {
-            C11 = Green.C31,
-            C12 = Green.C21,
-            C13 = Green.C11
+            C11 = Green.C33,
+            C21 = Green.C23,
+            C31 = Green.C13
         }
     };
 
@@ -114,48 +185,60 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Orange = Orange.WithCounterClockWiseRotation(),
         White = White with
         {
-            C31 = Green.C11,
-            C32 = Green.C21,
-            C33 = Green.C31
+            C13 = Green.C13,
+            C23 = Green.C23,
+            C33 = Green.C33
         },
         Green = Green with
         {
-            C11 = Yellow.C13,
-            C21 = Yellow.C12,
-            C31 = Yellow.C11
+            C13 = Yellow.C31,
+            C23 = Yellow.C21,
+            C33 = Yellow.C11
         },
         Blue = Blue with
         {
-            C13 = White.C33,
-            C23 = White.C32,
-            C33 = White.C31
+            C13 = White.C13,
+            C23 = White.C23,
+            C33 = White.C33
         },
         Yellow = Yellow with
         {
-            C11 = Blue.C13,
-            C12 = Blue.C23,
-            C13 = Blue.C33
+            C11 = Blue.C33,
+            C21 = Blue.C23,
+            C31 = Blue.C13
         }
     };
 
-    private RubikCube TurnGreen(bool clockwise) => clockwise ? GreenClockwise() : GreenCounterClockwise();
+    private RubikCube TurnGreen(bool clockwise) => clockwise
+        ? GreenClockwise()
+        : GreenCounterClockwise();
 
     private RubikCube GreenClockwise() => this with
     {
         Green = Green.WithClockWiseRotation(),
-        White = White.WithRightColumnFrom(Orange),
-        Orange = Orange.WithRightColumnFrom(Yellow),
+        White = White with
+        {
+            C11 = Orange.C11,
+            C12 = Orange.C12,
+            C13 = Orange.C13,
+        },
+        Orange = Orange with
+        {
+            C11 = Yellow.C11,
+            C12 = Yellow.C12,
+            C13 = Yellow.C13,
+        },
         Yellow = Yellow with
         {
-            C13 = Red.C31,
-            C23 = Red.C21,
-            C33 = Red.C11
+            C11 = Red.C11,
+            C12 = Red.C12,
+            C13 = Red.C13
         },
         Red = Red with
         {
-            C11 = White.C33,
-            C21 = White.C23,
-            C31 = White.C13
+            C11 = White.C11,
+            C12 = White.C12,
+            C13 = White.C13
         }
     };
 
@@ -164,48 +247,60 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Green = Green.WithCounterClockWiseRotation(),
         White = White with
         {
-            C13 = Red.C31,
-            C23 = Red.C21,
-            C33 = Red.C11
+            C11 = Red.C11,
+            C12 = Red.C12,
+            C13 = Red.C13
         },
-        Orange = Orange.WithRightColumnFrom(White),
-        Yellow = Yellow.WithRightColumnFrom(Orange),
+        Orange = Orange with
+        {
+            C11 = White.C11,
+            C12 = White.C12,
+            C13 = White.C13,
+        },
+        Yellow = Yellow with
+        {
+            C11 = Orange.C11,
+            C12 = Orange.C12,
+            C13 = Orange.C13
+        },
         Red = Red with
         {
-            C11 = Yellow.C33,
-            C21 = Yellow.C23,
-            C31 = Yellow.C13
+            C11 = Yellow.C11,
+            C12 = Yellow.C12,
+            C13 = Yellow.C13
         }
     };
 
-    private RubikCube TurnRed(bool clockwise) => clockwise ? RedClockwise() : RedCounterClockwise();
+    private RubikCube TurnRed(bool clockwise) => clockwise
+        ? RedClockwise()
+        : RedCounterClockwise();
 
     private RubikCube RedClockwise() => this with
     {
         Red = Red.WithClockWiseRotation(),
         White = White with
         {
-            C11 = Green.C13,
-            C12 = Green.C23,
-            C13 = Green.C33
+            C11 = Green.C11,
+            C21 = Green.C21,
+            C31 = Green.C31
         },
         Blue = Blue with
         {
-            C11 = White.C13,
-            C21 = White.C12,
-            C31 = White.C11
+            C11 = White.C11,
+            C21 = White.C21,
+            C31 = White.C31
         },
         Green = Green with
         {
-            C13 = Yellow.C33,
-            C23 = Yellow.C32,
-            C33 = Yellow.C31
+            C11 = Yellow.C33,
+            C21 = Yellow.C23,
+            C31 = Yellow.C13
         },
         Yellow = Yellow with
         {
-            C31 = Blue.C11,
-            C32 = Blue.C21,
-            C33 = Blue.C31
+            C13 = Blue.C31,
+            C23 = Blue.C21,
+            C33 = Blue.C11
         }
     };
 
@@ -214,39 +309,61 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Red = Red.WithCounterClockWiseRotation(),
         White = White with
         {
-            C11 = Blue.C31,
-            C12 = Blue.C21,
-            C13 = Blue.C11
+            C11 = Blue.C11,
+            C21 = Blue.C21,
+            C31 = Blue.C31
         },
         Blue = Blue with
         {
-            C11 = Yellow.C31,
-            C21 = Yellow.C32,
-            C31 = Yellow.C33
+            C11 = Yellow.C33,
+            C21 = Yellow.C23,
+            C31 = Yellow.C13
         },
         Green = Green with
         {
-            C13 = White.C11,
-            C23 = White.C12,
-            C33 = White.C13
+            C11 = White.C11,
+            C21 = White.C21,
+            C31 = White.C31
         },
         Yellow = Yellow with
         {
-            C31 = Green.C33,
-            C32 = Green.C23,
-            C33 = Green.C13
+            C13 = Green.C31,
+            C23 = Green.C21,
+            C33 = Green.C11
         }
     };
 
-    private RubikCube TurnYellow(bool clockwise) => clockwise ? YellowClockwise() : YellowCounterClockwise();
+    private RubikCube TurnYellow(bool clockwise) => clockwise
+        ? YellowClockwise()
+        : YellowCounterClockwise();
 
     private RubikCube YellowClockwise() => this with
     {
         Yellow = Yellow.WithClockWiseRotation(),
-        Blue = Blue.WithBottomRowFrom(Red),
-        Red = Red.WithBottomRowFrom(Green),
-        Green = Green.WithBottomRowFrom(Orange),
-        Orange = Orange.WithBottomRowFrom(Blue)
+        Blue = Blue with
+        {
+            C31 = Red.C11,
+            C32 = Red.C21,
+            C33 = Red.C31
+        },
+        Red = Red with
+        {
+            C11 = Green.C13,
+            C21 = Green.C12,
+            C31 = Green.C11
+        },
+        Green = Green with
+        {
+            C11 = Orange.C13,
+            C12 = Orange.C23,
+            C13 = Orange.C33
+        },
+        Orange = Orange with
+        {
+            C13 = Blue.C33,
+            C23 = Blue.C32,
+            C33 = Blue.C31
+        }
     };
 
     private RubikCube YellowCounterClockwise() => this with
@@ -254,13 +371,28 @@ public record RubikCube(Face White, Face Blue, Face Orange, Face Red, Face Green
         Yellow = Yellow.WithCounterClockWiseRotation(),
         Blue = Blue with
         {
-            C31 = Orange.C31,
-            C32 = Orange.C32,
-            C33 = Orange.C33
+            C31 = Orange.C33,
+            C32 = Orange.C23,
+            C33 = Orange.C13
         },
-        Red = Red.WithBottomRowFrom(Blue),
-        Green = Green.WithBottomRowFrom(Red),
-        Orange = Orange.WithBottomRowFrom(Green)
+        Red = Red with
+        {
+            C11 = Blue.C31,
+            C21 = Blue.C32,
+            C31 = Blue.C33
+        },
+        Green = Green with
+        {
+            C11 = Red.C31,
+            C12 = Red.C21,
+            C13 = Red.C11
+        },
+        Orange = Orange with
+        {
+            C13 = Green.C11,
+            C23 = Green.C12,
+            C33 = Green.C13
+        }
     };
 
     public bool IsSolved => this.All(f => f.IsSolved);

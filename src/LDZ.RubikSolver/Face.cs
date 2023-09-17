@@ -48,41 +48,6 @@ public record Face(
         C33 = C31
     };
 
-    public Face WithLeftColumnFrom(Face from) => this with
-    {
-        C11 = from.C11,
-        C21 = from.C21,
-        C31 = from.C31
-    };
-
-    public Face WithRightColumnFromLeftColumnInverted(Face from) => this with
-    {
-        C13 = from.C31,
-        C23 = from.C21,
-        C33 = from.C11
-    };
-
-    public Face WithRightColumnFrom(Face from) => this with
-    {
-        C13 = from.C13,
-        C23 = from.C23,
-        C33 = from.C33
-    };
-
-    public Face WithTopRowFrom(Face from) => this with
-    {
-        C11 = from.C11,
-        C12 = from.C12,
-        C13 = from.C13
-    };
-
-    public Face WithBottomRowFrom(Face from) => this with
-    {
-        C31 = from.C31,
-        C32 = from.C32,
-        C33 = from.C33
-    };
-
     public bool IsSolved => this.Distinct().Count() == 1;
 
     public IEnumerator<FaceColor> GetEnumerator()
